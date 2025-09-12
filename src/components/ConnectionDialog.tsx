@@ -148,20 +148,47 @@ export function ConnectionDialog({ provider, open, onOpenChange, onConnect }: Co
 
         <div>
           <Label>Regions</Label>
-          <div className="grid grid-cols-2 gap-2 mt-2">
-            {config.defaultRegions.map((region) => (
-              <div key={region} className="flex items-center space-x-2">
-                <Checkbox
-                  id={region}
-                  checked={connectionData.regions.includes(region)}
-                  onCheckedChange={() => toggleRegion(region)}
-                />
-                <Label htmlFor={region} className="text-sm">{region}</Label>
+          <Select 
+            value={connectionData.regions.length > 0 ? "custom" : ""}
+            onValueChange={(value) => {
+              if (value === "all") {
+                updateField("regions", config.defaultRegions);
+              } else if (value === "none") {
+                updateField("regions", []);
+              }
+            }}
+          >
+            <SelectTrigger className="mt-2">
+              <SelectValue 
+                placeholder={
+                  connectionData.regions.length === 0 
+                    ? "Select regions" 
+                    : connectionData.regions.length === config.defaultRegions.length
+                    ? "All regions selected"
+                    : `${connectionData.regions.length} regions selected`
+                }
+              />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Select All Regions</SelectItem>
+              <SelectItem value="none">Clear Selection</SelectItem>
+              <div className="px-2 py-1">
+                <Label className="text-xs text-muted-foreground">Individual Regions:</Label>
               </div>
-            ))}
-          </div>
+              {config.defaultRegions.map((region) => (
+                <div key={region} className="flex items-center space-x-2 px-2 py-1 hover:bg-accent rounded-sm cursor-pointer"
+                     onClick={() => toggleRegion(region)}>
+                  <Checkbox
+                    checked={connectionData.regions.includes(region)}
+                    onCheckedChange={() => toggleRegion(region)}
+                  />
+                  <span className="text-sm">{region}</span>
+                </div>
+              ))}
+            </SelectContent>
+          </Select>
           <p className="text-sm text-muted-foreground mt-2">
-            More regions for better coverage, specific regions for better performance.
+            Select multiple regions for better coverage and performance.
           </p>
         </div>
       </div>

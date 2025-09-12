@@ -79,7 +79,12 @@ export default function Onboarding() {
 
   if (step === "signup") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-cloud"></div>
+      
+      <div className="relative z-10">
         <div className="container mx-auto px-4 py-8">
           {/* Progress Bar */}
           <div className="max-w-2xl mx-auto mb-8">
@@ -160,12 +165,18 @@ export default function Onboarding() {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 
   if (step === "providers") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-cloud"></div>
+      
+      <div className="relative z-10">
         <div className="container mx-auto px-4 py-8">
           {/* Progress Bar */}
           <div className="max-w-2xl mx-auto mb-8">
@@ -217,13 +228,18 @@ export default function Onboarding() {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 
   // Completion step
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 flex items-center justify-center">
-      <div className="text-center max-w-2xl mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 flex items-center justify-center relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-cloud"></div>
+      
+      <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
         <div className="inline-flex items-center justify-center p-6 rounded-full bg-gradient-primary mb-8">
           <CheckCircle className="h-12 w-12 text-white" />
         </div>

@@ -16,9 +16,13 @@ import {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-cloud"></div>
+      
       {/* Header */}
-      <header className="container mx-auto px-4 py-6">
+      <header className="relative z-10 container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="p-2 rounded-lg bg-gradient-primary">
@@ -41,7 +45,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
+      <section className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <Badge className="mb-6 bg-gradient-card border-primary/20" variant="outline">
             <Zap className="h-3 w-3 mr-1" />
@@ -91,7 +95,7 @@ const Index = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="relative z-10 container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Everything you need to manage
@@ -172,7 +176,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto text-center bg-gradient-card rounded-2xl p-12 shadow-large border border-border/50">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to unify your
@@ -202,7 +206,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8">
+      <footer className="relative z-10 border-t border-border/50 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
