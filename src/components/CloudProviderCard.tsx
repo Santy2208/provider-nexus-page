@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ConnectionDialog } from "./ConnectionDialog";
 import { Cloud, Check, Settings } from "lucide-react";
 
 interface CloudProviderCardProps {
@@ -23,13 +24,10 @@ export function CloudProviderCard({
   onConnect,
   onConfigure,
 }: CloudProviderCardProps) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [showConnectionDialog, setShowConnectionDialog] = useState(false);
 
-  const handleConnect = async () => {
-    setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsLoading(false);
+  const handleConnectionComplete = (connectionData: any) => {
+    console.log("Connection data:", connectionData);
     onConnect();
   };
 
@@ -66,18 +64,11 @@ export function CloudProviderCard({
           {!isConnected ? (
             <Button
               variant={variant}
-              onClick={handleConnect}
-              disabled={isLoading}
+              onClick={() => setShowConnectionDialog(true)}
               className="flex-1"
             >
-              {isLoading ? (
-                <>
-                  <Cloud className="h-4 w-4 mr-2 animate-spin" />
-                  Connecting...
-                </>
-              ) : (
-                `Connect ${name}`
-              )}
+              <Cloud className="h-4 w-4 mr-2" />
+              Connect {name}
             </Button>
           ) : (
             <>
@@ -92,6 +83,13 @@ export function CloudProviderCard({
           )}
         </div>
       </CardContent>
+      
+      <ConnectionDialog
+        provider={variant}
+        open={showConnectionDialog}
+        onOpenChange={setShowConnectionDialog}
+        onConnect={handleConnectionComplete}
+      />
     </Card>
   );
 }
