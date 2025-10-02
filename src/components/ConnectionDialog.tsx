@@ -210,7 +210,7 @@ export function ConnectionDialog({ provider, open, onOpenChange, onConnect }: Co
             <Label htmlFor="roleName">1. Role Name *</Label>
             <Input
               id="roleName"
-              placeholder="CloudSyncRole"
+              placeholder="AlterPilotRole"
               value={connectionData.roleName}
               onChange={(e) => updateField("roleName", e.target.value)}
             />
@@ -259,7 +259,7 @@ export function ConnectionDialog({ provider, open, onOpenChange, onConnect }: Co
             <Label htmlFor="roleArn">4. Role ARN *</Label>
             <Input
               id="roleArn"
-              placeholder="arn:aws:iam::123456789012:role/CloudSyncRole"
+              placeholder="arn:aws:iam::123456789012:role/AlterPilotRole"
               value={connectionData.roleArn}
               onChange={(e) => updateField("roleArn", e.target.value)}
             />

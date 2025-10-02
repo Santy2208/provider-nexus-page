@@ -52,7 +52,7 @@ export function SignUpForm({ onSignUp }: SignUpFormProps) {
     
     toast({
       title: "Account created!",
-      description: "Welcome to CloudSync CMP. Let's connect your cloud accounts.",
+      description: "Welcome to AlterPilot, powered by Reve.Cloud. Let's connect your cloud accounts.",
     });
     
     onSignUp(formData);
@@ -69,7 +69,7 @@ export function SignUpForm({ onSignUp }: SignUpFormProps) {
           Create Account
         </CardTitle>
         <CardDescription>
-          Join CloudSync CMP to manage your cloud infrastructure
+          Join AlterPilot to manage your cloud infrastructure
         </CardDescription>
       </CardHeader>
 

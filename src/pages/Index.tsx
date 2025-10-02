@@ -24,13 +24,14 @@ const Index = () => {
       {/* Header */}
       <header className="relative z-10 container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="p-2 rounded-lg bg-gradient-primary">
-              <Cloud className="h-6 w-6 text-white" />
+          <div className="flex items-center space-x-3">
+            <img src="/logo-reve.png" alt="Reve Logo" className="h-10 w-auto" />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight">
+                AlterPilot
+              </span>
+              <span className="text-xs text-muted-foreground">powered by Reve.Cloud</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-              CloudSync CMP
-            </span>
           </div>
           <div className="flex items-center space-x-4">
             <Badge variant="secondary" className="bg-gradient-card">
@@ -183,7 +184,7 @@ const Index = () => {
             <span className="bg-gradient-hero bg-clip-text text-transparent"> cloud infrastructure?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 500+ enterprises already using CloudSync CMP to reduce costs, 
+            Join 500+ enterprises already using AlterPilot to reduce costs, 
             improve security, and accelerate cloud operations.
           </p>
           
@@ -213,7 +214,7 @@ const Index = () => {
               <div className="p-1 rounded bg-gradient-primary">
                 <Cloud className="h-4 w-4 text-white" />
               </div>
-              <span className="font-semibold">CloudSync CMP</span>
+              <span className="font-semibold">AlterPilot</span>
             </div>
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Privacy</a>

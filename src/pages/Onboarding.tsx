@@ -67,7 +67,7 @@ export default function Onboarding() {
     setStep("complete");
     toast({
       title: "Setup Complete!",
-      description: "Your CloudSync CMP platform is ready to use.",
+      description: "Your AlterPilot platform is ready to use.",
     });
   };
 
@@ -101,7 +101,7 @@ export default function Onboarding() {
               <Cloud className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-4xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
-              Welcome to CloudSync CMP
+              Welcome to AtlerPilot
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Your unified cloud management platform for AWS, Azure, GCP, and Oracle Cloud.
@@ -249,7 +249,7 @@ export default function Onboarding() {
         </h1>
         
         <p className="text-xl text-muted-foreground mb-8">
-          Your CloudSync CMP platform is configured and ready to use.
+          Your AtlerPilot platform is configured and ready to use.
           Start exploring your unified cloud dashboard.
         </p>
 
@@ -268,7 +268,7 @@ export default function Onboarding() {
           </div>
         </div>
 
-        <Button variant="hero" size="xl">
+        <Button variant="hero" size="xl" onClick={() => window.location.href = '/dashboard'}>
           Open Dashboard
           <ArrowRight className="h-5 w-5 ml-2" />
         </Button>
